@@ -30,7 +30,12 @@ SECRET_KEY = "django-insecure-g9_vz!zxd33%*u!vq-#&_18__$k^!7l2tdnu*%8f0qt618@5yi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "resumeq-frontend.vercel.app",
+    "companyprep-backend.onrender.com",
+]
 
 
 # Application definition
@@ -135,12 +140,10 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "https://resumeq-frontend.vercel.app",
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173",
-]
+CORS_ALLOW_CREDENTIALS = True
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.SessionAuthentication",
